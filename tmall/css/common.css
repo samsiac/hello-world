@@ -1,31 +1,20 @@
 /*通用样式*/
 /*样式重置*/
-/**{*/
-    /*margin: 0;*/
-    /*padding:0;*/
-/*}*/
-/*通配符所有元素为0，用时再设置*/
-body{
+*{
     margin: 0;
-overflow-x:hidden;
-    text-align: center;
+    padding:0;
 }
+/*通配符所有元素为0，用时再设置*/
 li{
     list-style-type: none;
 }
-span{
-    width: 100px;
-    height: 16px;
-}
+
 a{
     text-decoration: none;
-    color:#a8a8a8;
-    width: 70px;
 }
 /*块级元素wrapper*/
 .wrapper{
     width: 1230px;
     height: 100%;
-    background:#f2f2f2;
     margin: 0 auto;  /*auto自动*/
 }
