@@ -1,28 +1,287 @@
-/*index.html的样式*/
-/*header开始*/
+/* index.html 的样式 */
+
+
+/* header 开始 */
 #header{
     height: 32px;
     background: #f2f2f2;
+    /*background: #cccccc; 注释*/
     font-size: 12px;
-    color:#a8a8a8;
-    /*line-height: 32px;*/
-    /*单行文字垂直居中，行高等于*/
+    line-height: 32px; /* 单行文字垂直居中：行高=高度 */
+    border-bottom: 1px solid #e5e5e5;
 }
-/*header结束*/
+
 #login-info{
     float: left;
+}
+#login-info a{
+    padding:0 14px;
 }
 #quick-menu{
     float: right;
 }
-#quick-menu .menu
-{
+
+#quick-menu .menu{
     float: left;
+    /*background: #222;*/
+    position: relative;
+    padding: 0 14px;
+    height: 33px;
 }
-#header a,login-info,span{
-    float:left;
+
+#header a, #login-info span{
+    color: #999;
 }
+
+#header a{
+    /*padding: 0 14px;*/
+}
+
+
+
 #header a:hover{
+    color: #FF0036;
+}
+
+#header .triangle::after{
+    content: '';
+    border-width: 3px;
+    border-style: solid;
+    border-top-color: #bbb;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    width: 0;
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    margin-top: -2px;
+
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+    transition: none;
+    transform-origin: 3px 1.5px;
+}
+
+#login-info .register{
+    padding: 0;
+}
+
+#header .triangle:hover::after{
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+
+    -webkit-transition: transform .5s ease;
+    -moz-transition: transform .5s ease;
+    -ms-transition: transform .5s ease;
+    -o-transition: transform .5s ease;
+    transition: transform .5s ease;
+}
+
+#header .triangle{
+    border-style: solid;
+    border-color: transparent;
+    border-width: 0 1px 0 1px;
+}
+
+#header .triangle:hover{
+    background-color: #fff;
+    border-color: #e5e5e5;
+    cursor: pointer;
+}
+
+#header .triangle:hover > a{
+    text-decoration: underline;
+    color: #FF0036;
+}
+
+#header .triangle:hover .submenu{
+    display: block;
+}
+
+#quick-menu .submenu a:hover{
+    text-decoration: underline;
+}
+
+#quick-menu .submenu{
+    position: absolute;
+    top: 32px;
+    left: -1px;
+    width: 74px;
+    border-style: solid;
+    border-color: #e5e5e5;
+    border-width: 0 1px 1px 1px;
+    padding: 0 14px;
+    display: none;
+    background-color: #fff;
+}
+
+#quick-menu .split{
+    width: 1px;
+    height: 14px;
+    background: #ccc;
+    padding: 0;
+    margin: 9px 5px;
+}
+
+#quick-menu .qr-code{
+    width: 175px;
+    height: 227px;
+    border: 1px solid #e5e5e5;
+    position: absolute;
+    top: 28px;
+    left: -58px;
+    background: #fff;
+    box-shadow: 0 0 5px #aaa;
+    display: none;
+}
+
+#quick-menu .qr-code::after{
+    content: '';
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -10px;
+    left: 85px;
+}
+
+#quick-menu .mobile:hover .qr-code{
+    display: block;
+}
+#guild{
+    height:130px;
+}
+.guild-extra{
+    width: 982px;
+    height: 106px;
+    overflow: hidden;
+}
+/*logosearch开始*/
+#mallSeach .mq{
+    /*color:#000;*/
+    margin:0;
+    padding: 5px 3px 5px 5px;
+    outline:0;
+    border: none;
+    width: 433px;
+    height: 36px;
+    /*font: 16px/22px Arial;*/
+    box-sizing:border-box;
+    background:none;
+    text-indent:10px;/*文本缩进*/
+}
+#mallSeach form{
+    border:2px solid #ff0036;
+    /*border-width:2px 0 2px 2px;*/
+    width: 570px;
+    height: 36px;
+    margin: 0;
+}
+
+#mallSeach button{
+    right: 0;
+    top:0;
+    border:0;
+    cursor: pointer;
+    color:#fff;
+    background-color: #ff0036;
+    width:132px;
+    height:36px;
+    font-size: 18px;
+    font-weight:bold;
+    letter-spacing:5px;/*字间距*/
+    overflow: hidden;
+}
+.hot-query{
+    width: 550px;
+height:24px;
+    font-size: 12px;
+    padding: 4px 0 0;
+    margin-left:-13px;
+    overflow: hidden;
+    /*width:100%;*/
+}
+.hot-query li{
+    display:inline-block;
+    border-left:1px solid #ccc;
+    line-height: 1.1;
+    padding:0 12px;
+    /*color: #b1b1b1;*/
+    font-size: 12px;
+}
+/*PC端文字一般不小于12像素*/
+.hot-query a{
+    color:#b1b1b1;
+}
+#g-logo{
+    margin:3px 80px 1px 1px ;
+    float: left;
+    /*width: 240px;*/
+    /*height:130px;*/
+}
+#g-logo img{
+    margin: 1px 25px;
+    width: 230px;
+    height: 130px;
+}
+#mallSeach{
+    float:left;
+    overflow: hidden;
+   padding: 38px 0 0 0;
+}
+/*logosearch结束*/
+#inner a:hover{
     color:#ff0036;
-    /*伪类选择器*/
+}
+#inner a{
+    height: 35px;
+    cursor:pointer;
+    float:left;
+    padding:0 8px;
+    font-size:16px;
+    font-weight: 500;
+    display:block;
+    color: #333333;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    position:relative;
+
+}
+#inner img{
+    width: 100px;
+}
+#inner-con{
+    float: left;
+    /*padding:14px;*/
+    margin: 30px;
+    width: 200px;
+
+}
+#inner-con li{
+    height:32px;
+    color:#fff;
+    background-color: #696969;
+    text-indent: 10px;
+}
+#inner-con a{
+    color:#fff;
+    /*width:200px;*/
+    /*height: 32px;*/
+}
+#inner-con a:hover{
+    background-color: #fff;
+    color:#ff0036;
+    cursor:pointer;
+}
+#inner{
+    float: left;
 }
