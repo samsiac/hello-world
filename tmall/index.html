@@ -5,9 +5,11 @@
     <title>天猫--理想生活上天猫</title>
     <link rel="icon" type="image/x-icon" href="img/t.ico">
     <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/iconfont.css">
     <!--后定义的会把先定义的覆盖掉-->
     <!--因此通用的通常在上面-->
     <link rel="stylesheet" href="css/index.css">
+
 </head>
 <body>
 <div id="header">
@@ -15,27 +17,99 @@
     <p id="login-info">
         <span>喵，欢迎来天猫</span>
         <a href="">请登录</a>
-        <a href="">免费注册</a>
+        <a href="" class="register">免费注册</a>
         <!--三者用行级元素共占一行-->
     </p>
-    <ul id="quick-menu">
-        <li class="menu"><a href="">我的淘宝</a>
+    <ul id="quick-menu">       <!--菜单常用ul-->
+        <li class="menu triangle"><a href="">我的淘宝</a>
+            <ul class="submenu">
+                <li><a href="">已买到的宝贝</a></li>
+                <li><a href="">已卖出的宝贝</a></li>
+            </ul>
         </li>
-        <li class="menu"><a href="">购物车0件</a>
+        <li class="menu"><a href=""><i class="iconfont icon-gouwuchekong"></i>购物车0件</a>
         </li>
-        <li class="menu"><a href="">收藏夹</a>
+        <li class="menu triangle"><a href="">收藏夹</a>
+            <ul class="submenu">
+                <li><a href="">收藏的宝贝</a></li>
+                <li><a href="">收藏的店铺</a></li>
+            </ul>
     </li>
-        <li class="menu"><a href="">手机版</a>
+        <li class="menu split"></li>
+        <li class="menu mobile"><a href=""><i class="iconfont icon-msnui-tel"></i>手机版</a>
+        <div class="qr-code"></div>
         </li>
         <li class="menu"><a href="">淘宝网</a>
         </li>
-        <li class="menu"><a href="">商家支持</a>
+        <li class="menu triangle"><a href="">商家支持</a>
         </li>
+        <li class="menu"><a href=""><i class="iconfont icon-ai-list"></i>网站导航</a></li>
     </ul>
     </div>
 </div>
+    <div id="guild">
+        <div class="wrapper">
+            <div class="guild-extra">
+                <div id="g-logo">
+                    <a href="">
+                <img src="img/guild.png" style="width: 200px;height: 95px;">
+                    </a>
+                </div>
+                <div id="mallSeach">
+                    <form name="searchTop">
+                        <input type="text" class="mq" placeholder=" 搜索 天猫 商品/品牌/店铺">
+                        <!--<input type="submit" value="搜索" class="button">-->
+                    <button>搜索</button>
+                    </form>
+                <ul class="hot-query">
+                    <li><a href="">针织衫</a></li>
+                    <li><a href="" style="color: #ff0036;">连衣裙</a></li>
+                    <li><a href="">四件套</a></li>
+                    <li><a href="" style="color: #ff0036;">摄像头</a></li>
+                    <li><a href="">客厅灯</a></li>
+                    <li><a href="">口红</a></li>
+                    <li><a href="" style="color: #ff0036;">手机</a></li>
+                    <li><a href="">运动鞋</a></li>
+                    <li><a href="" style="color: #ff0036;">牛奶</a></li>
+                </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 <div>
-    <div class="wrapper"></div>
+    <div id="inner-con">
+        <ul>
+        <li style="background-color: #ff0036;"><i class="iconfont icon-ai-list"></i>商品分类</li></a>
+        <li><i class="iconfont icon-nvzhuangneiyi"></i><a href="">女装</a>/<a href="">内衣</a></li>
+        <li><i class="iconfont icon-nanzhuang"></i><a href="">男装</a>/<a href="">户外运动</a></li>
+        <li><i class="iconfont icon-xie"></i><a href="">女鞋</a>/<a href="">男鞋</a>/<a href="">箱包</a></li>
+        <li><i class="iconfont icon-kouhong"></i><a href="">美妆</a>/<a href="">个人护理</a></li>
+        <li><i class="iconfont icon-zhubaoshipin"></i><a href="">腕表</a>/<a href="">眼镜</a>/<a href="">珠宝饰品</a></li>
+        <li><i class="iconfont icon-msnui-tel"></i><a href="">手机</a>/<a href="">数码</a>/<a href="">电脑办公</a></li>
+        <li><i class="iconfont icon-muyingwanju"></i><a href="">母婴玩具</a></li>
+        <li><i class="iconfont icon-shipin"></i><a href="">零食</a>/<a href="">茶酒</a>/<a href="">进口食品</a></li>
+        <li><i class="iconfont icon-shengxian-xianshuiguo"></i><a href="">生鲜水果</a></li>
+        <li><i class="iconfont icon-31tianmaojiadian"></i><a href="">大家电</a>/<a href="">生活电器</a></li>
+        <li><i class="iconfont icon-jiajujiancai"></i><a href="">家具建材</a></li>
+        <li><i class="iconfont icon-qichepeijian"></i><a href="">汽车</a>/<a href="">配件</a>/<a href="">用品</a></li>
+        <li><i class="iconfont icon-jiafangjiashi"></i><a href="">家纺</a>/<a href="">家饰</a>/<a href="">鲜花</a></li>
+        <li><i class="iconfont icon-yiyaoxiang"></i><a href="">医药保健</a></li>
+        <li><i class="iconfont icon-weibiaoti2fuzhi10"></i><a href="">厨具</a>/<a href="">收纳</a>/<a href="">宠物</a></li>
+        <li><i class="iconfont icon-tushu"></i><a href="">图书音像</a></li>
+    </div>
+    <div id="inner">
+    <a href=""><img src="img/chaoshi.png" alt=""></a>
+    <a href=""><img src="img/guoji.png" alt=""></a>
+    <a href="">天猫会员</a>
+    <a href="">电器城</a>
+    <a href="">喵鲜生</a>
+    <a href="">医药馆</a>
+    <a href="">营业厅</a>
+    <a href="">魅力惠</a>
+    <a href="">飞猪旅行</a>
+    </div>
 </div>
 </body>
 </html>
+
+
