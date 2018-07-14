@@ -270,7 +270,9 @@ height:24px;
     height:32px;
     color:#fff;
     background-color: #696969;
-    text-indent: 10px;
+    text-indent: 17px;/*缩进*/
+    /*letter-spacing: 1px;字间距*/
+    line-height: 32px;
 }
 #inner-con a{
     color:#fff;
