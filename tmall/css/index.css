@@ -155,13 +155,14 @@
 
 #quick-menu .mobile:hover .qr-code{
     display: block;
+    background-color: #fff;
 }
 #guild{
     height:130px;
 }
 .guild-extra{
     width: 982px;
-    height: 106px;
+    height:130px;
     overflow: hidden;
 }
 /*logosearch开始*/
@@ -171,7 +172,7 @@
     padding: 5px 3px 5px 5px;
     outline:0;
     border: none;
-    width: 433px;
+    width: 473px;
     height: 36px;
     /*font: 16px/22px Arial;*/
     box-sizing:border-box;
@@ -181,7 +182,7 @@
 #mallSeach form{
     border:2px solid #ff0036;
     /*border-width:2px 0 2px 2px;*/
-    width: 570px;
+    width: 610px;
     height: 36px;
     margin: 0;
 }
@@ -201,7 +202,7 @@
     overflow: hidden;
 }
 .hot-query{
-    width: 550px;
+    width: 610px;
 height:24px;
     font-size: 12px;
     padding: 4px 0 0;
@@ -228,7 +229,7 @@ height:24px;
     /*height:130px;*/
 }
 #g-logo img{
-    margin: 1px 25px;
+    margin: 1px 25px 0 25px;
     width: 230px;
     height: 130px;
 }
@@ -262,7 +263,7 @@ height:24px;
 #inner-con{
     float: left;
     /*padding:14px;*/
-    margin: 30px;
+    margin: 0 3px auto 30px;
     width: 200px;
 
 }
@@ -279,11 +280,37 @@ height:24px;
     /*width:200px;*/
     /*height: 32px;*/
 }
-#inner-con a:hover{
+#inner-con li.move:hover{
     background-color: #fff;
     color:#ff0036;
     cursor:pointer;
 }
 #inner{
     float: left;
+}
+/*guild结束*/
+#big-banner{
+    width: 982px;
+    height: 500px;
+}
+#mui-bar{
+    /*line-height: 720px;*/
+    height:720px;
+    background-color: #000;
+    right:0;
+    width: 35px;
+    position:absolute;
+    top:0;
+    color: #fff;
+    font-size: 12px;
+    font-family: "Microsoft Yahei","\5fae\8f6f\96c5\9ed1","\5b8b\4f53";
+}
+#mui-bar li{
+    height:35px;
+    text-indent: 12px;
+    line-height: 35px;
+}
+#mui-bar li:hover{
+    background-color: #ff0036;
+    color:#fff;
 }
