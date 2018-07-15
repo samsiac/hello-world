@@ -282,17 +282,44 @@ height:24px;
     /*letter-spacing: 1px;字间距*/
     line-height: 32px;
 }
-#inner-con a{
+/*#inner-con a{*/
+    /*color:#fff;*/
+    /*!*width:200px;*!*/
+    /*!*height: 32px;*!*/
+/*}*/
+/*#inner-con li.move:hover{*/
+    /*background-color: #fff;*/
+/*color:#ff0036;*/
+/*cursor:pointer;*/
+/*}*/
+#category{
+    margin: 32.2px 0 0 0;
+}
+#in-con{
+    float: left;
+    /*padding:14px;*/
+    margin: 0 3px auto 30px;
+    width: 200px;
+
+}
+#in-con li{
+    height:32px;
+    color:#fff;
+    background-color: #696969;
+    text-indent: 17px;/*缩进*/
+    /*letter-spacing: 1px;字间距*/
+    line-height: 32px;
+}
+#in-con a{
     color:#fff;
     /*width:200px;*/
     /*height: 32px;*/
 }
-#inner-con li.move:hover{
+#in-con li.move:hover{
     background-color: #fff;
     color:#ff0036;
     cursor:pointer;
 }
-
 /*guild结束*/
 
 /*#big-banner{*/
@@ -325,7 +352,7 @@ height:24px;
 }
 #category .wrapper{
     /*margin:32px 0 0 0;*/
-    height: 500px;
+    height: 483px;
     background: url("../img/banner1.webp") no-repeat center;
     position:relative;
 }
