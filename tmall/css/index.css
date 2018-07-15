@@ -239,6 +239,13 @@ height:24px;
    padding: 38px 0 0 0;
 }
 /*logosearch结束*/
+#line .kind{
+                    float:left
+                }
+#inner{
+    float: left;
+    height: 35px;
+}
 #inner a:hover{
     color:#ff0036;
 }
@@ -285,14 +292,13 @@ height:24px;
     color:#ff0036;
     cursor:pointer;
 }
-#inner{
-    float: left;
-}
+
 /*guild结束*/
-#big-banner{
-    width: 982px;
-    height: 500px;
-}
+
+/*#big-banner{*/
+    /*width: 982px;*/
+    /*height: 500px;*/
+/*}*/
 #mui-bar{
     /*line-height: 720px;*/
     height:720px;
@@ -313,4 +319,36 @@ height:24px;
 #mui-bar li:hover{
     background-color: #ff0036;
     color:#fff;
+}
+#category{
+    background-color: #042769;
+}
+#category .wrapper{
+    /*margin:32px 0 0 0;*/
+    height: 500px;
+    background: url("../img/banner1.webp") no-repeat center;
+    position:relative;
+}
+/*轮播图结束*/
+#brandwall{
+padding: 24px 0 0 0;
+}
+#brandwall img{
+    height: 316px;
+}
+#brandwall .left-girl{
+    width:234px;
+    float: left;
+}
+#brandwall .left{
+    width: 485px;
+    float: left;
+}
+#brandwall .right{
+    float:left;
+    width: 485px;
+}
+#brandwall .head{
+    height: 55px;
+    background-color: #fff;
 }
