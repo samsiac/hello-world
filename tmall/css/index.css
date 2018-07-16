@@ -352,12 +352,27 @@ height:24px;
     float: left;
     display:block;
     width:236px;
+    height: 267px;
     margin-right:10px;
+    -webkit-transition: opacity .5s ease-out ;
+    -moz-transition: opacity .5s ease-out;
+    -ms-transition: opacity .5s ease-out ;
+    -o-transition: opacity .5s ease-out;
+    transition: opacity .5s ease-out;
 }
-#interact a .interact-img:hover{
-    opacity: 0.8;
-    height:272px;
+#interact .interact-img:hover {
+    opacity: .5;
+    filter: alpha(opacity=50);
+    -webkit-transform: scale(1.01);
+    -moz-transform: scale(1.01);
+    -ms-transform: scale(1.01);
+    -o-transform: scale(1.01);
+    transform: scale(1.01);
 }
+/*#interact a .interact-img:hover{*/
+    /*opacity: 0.8;*/
+    /*height:272px;*/
+/*}*/
 /*中间连接结束*/
 #brandwall{
     height: 388px;
@@ -607,11 +622,11 @@ padding: 24px 0 0 0;
 .brand-item .icon-zhuanhuan{
     /*margin: 0 auto;*/
     /*display: block;*/
-    -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -ms-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
     /*opacity: 0;*/
 }
 
