@@ -6,10 +6,79 @@
 </head>
 <body>
 <script>
-    var x = 1;
-    x = '今天天气真好';
-    console.log(x);
-    console.log(typeof x);
+    // var x = 1;  //eg7
+    // x = '今天天气真好';
+    // console.log(x);
+    // console.log(typeof x);
+    //
+    // var a = "";
+    // console.log(typeof a);//eg2
+    // var b;
+    // console.log(b);
+
+    //2-1
+    var a = 80,b = 0X65,c = 095,d = 0115,max;
+    max = a;
+    if(b > max){
+        max = b;
+    }
+    if(c > max){
+        max = c;
+    }
+    if(d > max){
+        max = d;
+    }
+    console.log(max);
+    console.log(a);
+    console.log(b);
+    console.log(c);
+    console.log(d);
+
+    //2-2
+
+    var my_bouse = 1;
+    // var default = 1;
+    // var my dog = 1;
+    // var 2cats = 1;
+    // console.log(default);
+    //
+    // console.log(my dog);
+    // console.log(2cats);
+    console.log(my_bouse);
+
+    //2-4
+     var mytext = "Here is\nsome text!";
+     console.log(mytext);
+
+     //2-7
+    var a = 123,b = 7,c;
+    c = a % b;
+    console.log(c);
+
+
+    //2-8
+    var a = "123abc",b="123";
+    console.log('a' - 'b');
+    //console.log('这是一条输出语句');
+
+//3-1
+var x = Math.random(),y = Math.random(),max;
+max = (x > y) ? x : y;
+console.log(max);
+
+//3-2
+   // var year = window.prompt('输入年份')；
+    var today = new Date();
+    var year = today.getFullYear();
+    if((year % 4 == 0 && year % 100 != 0) ||  year % 400 == 0){
+        console.log('今年是闰年');
+    }else {
+        console.log('今年是平年');
+    }
+
+
+
+
 </script>
 </body>
 </html>
