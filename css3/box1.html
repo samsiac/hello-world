@@ -1,85 +1,125 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<title>田字格</title>-->
+    <!--<style>-->
+        <!--*{-->
+            <!--margin: 0;-->
+            <!--padding: 0;-->
+        <!--}-->
+        <!--.wrapper{-->
+            <!--width:1230px;-->
+            <!--height:100%;-->
+        <!--}-->
+        <!--#container1{-->
+            <!--width:500px;-->
+            <!--height:200px;-->
+            <!--margin:1px;-->
+        <!--}-->
+        <!--#container2{-->
+            <!--margin: 1px;-->
+            <!--width: 600px;-->
+            <!--height: 200px;-->
+        <!--}-->
+        <!--.box1 {-->
+            <!--width:200px;-->
+            <!--height:200px;-->
+            <!--border:1px solid #ff0000;-->
+            <!--position:relative;-->
+            <!--float: left;-->
+            <!--transform: translate(1px);-->
+        <!--}-->
+        <!--.box2 {-->
+            <!--width:200px;-->
+            <!--height:200px;-->
+            <!--border:1px solid #ff0000;-->
+            <!--position:relative;-->
+            <!--float: left;-->
+        <!--}-->
+        <!--.box3 {-->
+            <!--width:200px;-->
+            <!--height:200px;-->
+            <!--border: 1px solid #ff0000;-->
+            <!--position:relative;-->
+            <!--float: left;-->
+            <!--transform: translate(1px,-1px);-->
+
+        <!--}-->
+        <!--.box4 {-->
+            <!--width:200px;-->
+            <!--height:200px;-->
+            <!--border:1px solid #ff0000;-->
+            <!--position:relative;-->
+            <!--float: left;-->
+            <!--transform:translateY(-1px);-->
+        <!--}-->
+       <!--div :hover{-->
+           <!--border: 1px solid #00ff00;-->
+           <!--opacity: .8;-->
+        <!--}-->
+       <!--.a{-->
+           <!--white-space: nowrap;-->
+           <!--overflow: hidden;-->
+           <!--width:100px;-->
+           <!--height: 70px;-->
+           <!--/*border: 1px solid #000;*/-->
+           <!--text-overflow: ellipsis;-->
+       <!--}-->
+
+    <!--</style>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div id="container1">-->
+   <!--<div class="box1"></div>-->
+    <!--<div class="box2 "></div>-->
+<!--</div>-->
+<!--<div id="container2">-->
+   <!--<div class="box3"></div>-->
+    <!--<div class="box4 "></div>-->
+<!--</div>-->
+<!--<div class="a">-->
+<!--按时发生嘎嘎嘎哈撒大好河山是干撒噶哈哈推荐人家-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>田字格</title>
+    <title>Title</title>
     <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        .wrapper{
-            width:1230px;
-            height:100%;
-        }
-        #container1{
-            width:500px;
-            height:200px;
-            margin:1px;
-        }
-        #container2{
-            margin: 1px;
-            width: 600px;
+        .elem{
+            width: 200px;
             height: 200px;
-        }
-        .box1 {
-            width:200px;
-            height:200px;
-            border:1px solid #ff0000;
-            position:relative;
+            border: 1px solid #f00;
             float: left;
-            transform: translate(1px);
+            position: relative;
         }
-        .box2 {
-            width:200px;
-            height:200px;
-            border:1px solid #ff0000;
-            position:relative;
-            float: left;
+        .elem1{
         }
-        .box3 {
-            width:200px;
-            height:200px;
-            border: 1px solid #ff0000;
-            position:relative;
-            float: left;
-            transform: translate(1px,-1px);
-
+        .elem2{
+            transform: translateX(-1px);
         }
-        .box4 {
-            width:200px;
-            height:200px;
-            border:1px solid #ff0000;
-            position:relative;
-            float: left;
-            transform:translateY(-1px);
+        .elem3{
+            clear: both;
+            transform: translateY(-1px);
         }
-       div :hover{
-           border: 1px solid #00ff00;
-           opacity: .8;
+        .elem4{
+            transform: translate(-1px, -1px);
         }
-       .a{
-           white-space: nowrap;
-           overflow: hidden;
-           width:80px;
-           height: 50px;
-           border: 1px solid #000;
-           text-overflow: ellipsis;
-       }
-
+        .elem:hover{
+            border-color: #00ff00;
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
-<div id="container1">
-   <div class="box1"></div>
-    <div class="box2 "></div>
-</div>
-<div id="container2">
-   <div class="box3"></div>
-    <div class="box4 "></div>
-</div>
-<div class="a">
-按时发生嘎嘎嘎哈撒大好河山是干撒噶哈哈推荐人家
-</div>
+<div class="elem elem1"></div>
+<div class="elem elem2"></div>
+<div class="elem elem3"></div>
+<div class="elem elem4"></div>
+
 </body>
 </html>
