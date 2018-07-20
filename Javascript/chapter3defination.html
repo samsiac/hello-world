@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // var a = 5;
+    // true || (a = 6);
+    // console.log(a);
+
+    var a = 5;
+    false && (a = 6);
+    console.log(a);
+
+    //驼峰式命名规范
+    var sUername = 'zhangsan';  //string
+    var iAge = 20;  //int
+    var fPrice = 10.5;  //float
+    var bFlag = true;  //bool
+    var oDiv;  //object
+
+    //2-5
+    var sName = 'Peking';
+    console.log('我在'+ sName +'学习');
+    //单引号能内套双引号
+    //双引内套单引号，若必套双引则用转义字符
+    console.log("我在\"Peking\"学习");
+
+
+    //3-1
+    console.log(Math.PI);
+
+    //0 ~ 36
+    //0 <= Math.random() < 1
+    //0 <= Math.radom() * 37 < 37
+    //10 < Math.random() * 91 + 10 <100
+    console.log(Math.random());
+    var lucky = '';
+    for(var i=0 ; i<7; i++){
+        lucky += Math.floor(Math.random() * 37) + '   '
+    }
+    document.write('机选号码为：' + lucky);
+    document.write(Math.floor(Math.random() * 91 + 10));
+
+    //定义随机数函数
+    function getMax(x , y){
+        return x > y ? x : y;
+    }
+    var x = Math.random();
+    var y = Math.random();
+    var max = getMax(x , y);
+    document.write('当前随机数是：x='+ x +'y='+ y +',最大值为'+max)
+    //输出语句尽量写在函数外部
+
+    //3-2
+    function getLeapYear(year) {
+        if((year % 4 == 0 && year % 100 != 0) || year % 400 == 0){
+            return true;
+    }//else{                                              //用bool型返回给外部
+            return false;
+   // }
+    }
+
+    var now = new Date();
+    console.log(getLeapYear(now.getFullYear()));
+</script>
+</body>
+</html>
