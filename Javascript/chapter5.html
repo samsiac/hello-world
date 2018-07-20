@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //3-1  f(x) = 4x2+3x+2
+    // var res;
+    // var x = window.prompt('输入一个整数');
+    // x = parseInt(x);
+    // function f(x){
+    //     res = 4*Math.pow(x,2)+ x*3 +2;
+    //     return res;
+    // }
+    // //console.log(res);
+    //  console.log('4x^2+3x+2='+f(x));
+    // console.log('输入值x='+x);
+    // console.log('输入值x的数据类型为'+typeof x);
+    //
+    // //3-2
+    // var x = window.prompt('输入第一个数的值：');
+    // var y = window.prompt('输入第二个数的值');
+    // x = parseInt(x);
+    // y = parseInt(y);
+    // function Min(x,y) {
+    //     return x<y ? x:y;
+    // }console.log('两数间最小值为'+Min(x,y));
+
+    //3-3编写一个判断某个非负整数是否能够同时被3,5,7整除的函数，
+    // 然后在页面上输出1~1000之间所有能同时被3,5,7整除的整数，
+    // 并要求每行显示6个这样的数
+
+    function zChu(n) {
+        var re;
+        var length = n.length;
+        for (var k = 1; k < n; k++) {
+            if (k % 3 == 0 && k % 5 == 0 && k % 7 == 0) {
+                document.write(k+'<br>');
+            }
+        }
+   }
+   zChu(1000);
+
+
+
+    //3-4 输出100~1000之间的所有素数，并要求每行显示6个素数
+   for(var n=100;n<1000;n++){
+       for(var i=2;i<n;i++){
+           if(n % i == 0)
+               break;
+       }
+       if(i == n)
+           document.write('<br>'+ n +'<br>');
+   }
+
+   //3-5编写一个非递归函数factorial(n)，计算12!-10!的结果
+    var m = 1;
+    function factorial(n) {
+        for(var i=1;i<=n;i++){
+            m *= i;
+        }
+        return m;
+    }
+    var res = factorial(12) - factorial(10);
+    console.log(res);
+    console.log(factorial(12));
+
+    //3-6
+    for(var i=1; i<=5;i++){
+        for(var k=1;k<=5-i;k++){
+            document.write('&nbsp;');
+        }
+        for(var j=1; j<=i;j++){
+            document.write('*&nbsp;');
+        }
+        document.write('<br>');
+    }
+
+    //3-7斐波纳契（Fibonacci）数列的第一项是1，
+    // 第二项是1，以后各项都是前两项的和。
+    // 试用递归函数和非递归函数各编写一个程序，求斐波纳契数列第N项的值
+    //3-7-1:递归：
+    function fib(n){
+    var sum = 0;
+    for (var i=1;i<=n;i++){
+        sum +=
+    }
+    }
+</script>
+</body>
+</html>
