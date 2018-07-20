@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //3-3
+    function fac(n){
+        var result = 1;
+        for(var i=1;i<=n;i++){
+            result *= i;
+        }
+        return result;      //!!!/console.log();
+    }
+    console.log(fac(10))        //fac(10);
+
+
+    // function fac2() {
+    //     if(n == 1){                 //出口
+    //         return 1;
+    //     }
+    //     return n * arguments.callee(n-1);   //fac
+    // }
+    // console.log(fac2(10));          //递归，自己调用自己
+
+    //3-4阶乘求和
+    var sum = 0;
+    for(var i=0; i<10;i++){
+       sum += fac(i)
+    }
+    console.log(sum);
+
+    //3-5
+    // function  print(n) {
+    //     for(var i=1;i<=n;i++){
+    //         for(var j=1;j<=i;j++){
+    //             document.write(j+'&nbsp;');
+    //         }
+    //         document.write('<br/>')
+    //     }
+    // }
+    // print(5);
+
+    //3-6
+    function  print(n) {
+        for(var i=1;i<=n;i++){
+            for(var k=1;k<=n-i;k++){
+            document.write('&nbsp;');
+        }
+        for(var j=1;j<=i;j++){
+              document.write('*&nbsp;');
+            }
+            document.write('<br>')
+        }
+    }
+    print(5);
+
+    // function print(n){
+    //     for(var i=1; i<=n; i++){
+    //         for(var k=1; k<=n-i; k++){
+    //             document.write('&nbsp;');
+    //         }
+    //         for(var j=1; j<=i; j++){
+    //             document.write('*&nbsp;');
+    //         }
+    //         document.write('<br>');
+    //     }
+    // }
+    // print(5);
+
+    //3-7三位数x，被4除余2，被7除余3，被9除余5
+    for(var i=100;i<1000;i++){
+        if(i % 4 == 2 && i % 7 == 3 && i % 9 ==5){
+            document.write(i+'<br/>');
+        }
+    }document.write('<br/>');
+
+
+
+    //3-8
+    //ABCD;这个四位数是13的倍数，A=B+C，四位取整Math.floor(x/1000)
+    //4321
+    // A=Math.floor(x/1000)
+    //B=Math.floor(x/100)%10
+    //C=Math.floor(x/10) % 10
+    for(var x=1000;x<10000;x++){
+        if((x % 13 == 0) && (Math.floor(x/1000) == Math.floor(x/100)%10 + Math.floor(x/10) % 10 )){
+            document.write(x+'<br/>');
+        }
+    }
+</script>
+</body>
+</html>
