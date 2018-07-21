@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //3-3
+    // 编写一个判断某个非负整数是否能够同时被3,5,7整除的函数，
+    //然后在页面上输出1~1000之间所有能同时被3,5,7整除的整数，
+    // 并要求每行显示6个这样的数。
+    function foo(num){
+        if(num % 3 == 0 && num % 5 == 0 && num % 7 ==0){
+            return true;
+        }
+        return false;
+    }
+    var arr = [];
+    for(var i=1; i<=1000; i++) {
+        if(foo(i)){
+            arr.push(i);
+        }
+    }
+    for(var i=0; i<arr.length; i++){
+        document.write(arr[i] + '&nbsp;');
+        if((i + 1) % 6 == 0){
+            document.write('<br>');
+        }
+    }
+    var count = 0;
+    for(var i=1; i<=1000; i++){
+        if(i % 3 == 0 && i % 5 == 0 && i % 7 ==0){
+            count++;
+            document.write(i + '&nbsp;');
+        }
+        if(count % 6 == 0){
+            document.write('<br>');
+        }
+    }
+
+    //3-4在页面上编程输出100~1000之间的所有素数，
+    // 并要求每行显示6个素数。
+    function prime(num) { // 101
+        var bFlag = false;// 标志位，false表示不是素数，true表示是素数
+        for (var i = 2; i < num; i++) {
+            if (num % i == 0) {
+                bFlag = false;
+                break;
+            } else {
+                bFlag = true;
+            }
+        }
+        return bFlag;
+    }
+    var arr = [];
+    for (var i = 100; i <= 1000; i++) {
+        if (prime(i)) {
+            arr.push(i);
+        }
+    }
+    for (var i = 0; i < arr.length; i++) {
+        document.write(arr[i] + '&nbsp;');
+        if ((i + 1) % 6 == 0) {
+            document.write('<br>');
+        }
+    }
+
+
+    /* 3-7斐波纳契（Fibonacci）数列的第一项是1，
+      第二项是1，以后各项都是前两项的和。
+     试用递归函数和非递归函数各编写一个程序，
+     求斐波纳契数列第N项的值
+     n = (n - 1) + (n - 2)
+      * 1 1 2 3 5 8 13 ...
+    * n1 n2 sum
+    *  n = (n - 1) + (n - 2)
+    * */
+    function fibonacci1(n) {
+        if (n == 1 || n == 2) {
+            return 1;
+        }
+        return fibonacci1(n - 1) + fibonacci1(n - 2);
+    }
+    function fibonacci2(n){
+        var n1 = 1, n2 = 1, sum = 0;
+        for(var i=2; i<n; i++){
+            sum = n1 + n2;
+            n1 = n2;
+            n2 = sum;
+        }
+        return sum;
+    }
+    function fibonacci3(n){
+        var arr = [1, 1, 2, 3, 5];
+        for(var i=2; i<n; i++){
+            arr[i] = arr[i-1] + arr[i-2];
+        }
+        return arr[n-1];
+    }
+    console.log(fibonacci1(7));
+    console.log(fibonacci2(7));
+    console.log(fibonacci3(7));
+
+    //3-8
+    function getPI(n) {
+        var pi = 0;
+        for(var i=1; i<=n; i++){
+            pi += 4 * Math.pow(-1, i - 1) / (2 * i - 1);
+        }
+        return pi;
+    }
+    var arr = [100, 500, 1000, 10000];
+    for (var i = 0, len = arr.length; i < len; i++) {
+        console.log(getPI(arr[i]));
+    }
+
+
+    /*3-9
+    * 利用全局变量和函数，设计模拟幸运数字机游戏。
+    * 设幸运数字为8，每次由计算机随机产生3个1-9之间(包括1和9）
+    * 的随机数，当这3个随机数中有一个数字为8时，就算赢了一次，
+    * 要求利用函数计算获胜率。
+    *
+    *
+    * 1 ~ 9
+    *   Math.ceil(Math.random() * ( 9 - 1)) + 1
+    *
+    *
+    * */
+    function getRangeRandom(low, high) {
+        return Math.ceil(Math.random() * (high - low)) + low;
+    }
+    var total = 100000;
+    var win = 0;
+    for (var i = 0; i < total; i++) {
+        for (var j = 0; j < 3; j++) {
+            // debugger;
+            if (getRangeRandom(1, 9) == 8) {
+                win++;
+                break;
+            }
+        }
+    }
+    console.log(win / total);
+
+
+</script>
+</body>
+</html>
