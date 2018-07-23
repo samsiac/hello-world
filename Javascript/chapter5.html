@@ -31,33 +31,73 @@
     //3-3编写一个判断某个非负整数是否能够同时被3,5,7整除的函数，
     // 然后在页面上输出1~1000之间所有能同时被3,5,7整除的整数，
     // 并要求每行显示6个这样的数
-
-    function zChu(n) {
-        var re;
-        var length = n.length;
-        for (var k = 1; k < n; k++) {
-            if (k % 3 == 0 && k % 5 == 0 && k % 7 == 0) {
-                document.write(k+'<br>');
-            }
+    //3-3-1:定义函数，添加数组，长度脚标判断
+    document.write('1~1000能被3,5,7整除的有：' + '<br>');
+    function aFoo(num){
+        if(num % 3 == 0 && num % 5 == 0 && num % 7 ==0){
+            return true;
         }
-   }
-   zChu(1000);
+        return false;
+    }
+    var arr = [];
+    for(var i=1; i<=1000; i++) {
+        if(aFoo(i)){
+            arr.push(i);
+        }
+    }
+    for(var i=0; i<arr.length; i++){
+        document.write(arr[i] + '&nbsp;');
+        if((i + 1) % 6 == 0){
+            document.write('<br>');
+        }
+    }
+    // 3-3-2循环
+    // var m = 0;   //初始长度为0
+    // for(var i=1; i<= 1000; i++){
+    //     if(i % 3 == 0 && i % 5 == 0 && i % 7 == 0){
+    //             m++;            //符合条件则长度+1
+    //         document.write(i + '&nbsp;');//输出符合条件的数
+    //     }
+    //    if(m % 6 == 0){
+    //    document.write('<br>');
+    //    }
+    // }
 
-
-
-    //3-4 输出100~1000之间的所有素数，并要求每行显示6个素数
-   for(var n=100;n<1000;n++){
+document.write('<br>')
+document.write('100~1000之间的所有素数：'+'<br>');
+    // 3-4 输出100~1000之间的所有素数，并要求每行显示6个素数
+   // 3-4-1函数条件判断，添加入数组，数组长度换行
+   function sShu(n){            //定义函数判断素数
+       var flag = false;        //标志位！！！！！
        for(var i=2;i<n;i++){
-           if(n % i == 0)
+           if(n % i == 0){
+               flag = false;        //?????循环条件变量要统一？？？？
                break;
-       }
-       if(i == n)
-           document.write('<br>'+ n +'<br>');
+           }else{
+           flag = true;
+           }
+       }return flag;
    }
+
+   var arr = [];    //定义数组添加入内
+    for(var i=100; i<=1000;i++){
+        if(sShu(i)){
+            arr.push(i);
+        }
+    }
+    for(var i=0; i<arr.length; i++) {       //数组长度换行
+        document.write(arr[i] + '&nbsp;')   //输出合格元素，间距
+        if((i+1) % 6 == 0){
+            document.write('<br>')  //6个换行
+        }
+    }
 
    //3-5编写一个非递归函数factorial(n)，计算12!-10!的结果
-    var m = 1;
+    //3-5-1非递归
+    document.write('<br>')
+
     function factorial(n) {
+        var m = 1;          //局部变量！！！！！
         for(var i=1;i<=n;i++){
             m *= i;
         }
@@ -66,6 +106,18 @@
     var res = factorial(12) - factorial(10);
     console.log(res);
     console.log(factorial(12));
+    console.log(factorial(10));
+
+    //3-5-2递归，自己调用自己arguments.callee（）！！！！
+    // function factorial(n){
+    //     if(n == 1){
+    //         return 1;
+    //     }
+    //     return n * arguments.callee(n - 1);
+    // }
+    // var res = factorial(12) - factorial(10);
+    // console.log(res);
+    // console.log(factorial(12));
 
     //3-6
     for(var i=1; i<=5;i++){
@@ -78,16 +130,43 @@
         document.write('<br>');
     }
 
-    //3-7斐波纳契（Fibonacci）数列的第一项是1，
+    //3-7！！！！！！斐波纳契!!!!!!!!（Fibonacci）数列的第一项是1，
     // 第二项是1，以后各项都是前两项的和。
     // 试用递归函数和非递归函数各编写一个程序，求斐波纳契数列第N项的值
     //3-7-1:递归：
-    function fib(n){
-    var sum = 0;
-    for (var i=1;i<=n;i++){
-        sum +=
+   // function fibonacci(n) {
+   //     if(n == 1 || n == 2){
+   //         return 1;        //直接返回数字结果？
+   //     }
+   //     return fibonacci(n - 1) + fibonacci(n - 2);
+   // }
+
+    //3-7-2:非递归：
+    function fibonacci(n){
+        var n1 = 1, n2 = 1, sum = 0;    //???输出1,2项存在问题
+        if(n<3){                        //加if条件判断2项
+            return sum = 1;
+        }
+        else{
+        for(var i=2; i<n; i++){
+            sum = n1 + n2;
+            n1 = n2;
+            n2 = sum;
+        }
+        }
+        return sum;
     }
-    }
+    //3-7-3数组！！！！？？？？？！！！！
+    // function fibonacci(n){
+    //     var arr = [1, 1, 2, 3, 5];
+    //     for(var i=2;i<n;i++){
+    //         arr[i] = arr[i-1] + arr[i-2];
+    //     }
+    //     return arr[n-1];            //脚标？
+    // }
+
+    console.log(fibonacci(7));
+    console.log(fibonacci(1));
 </script>
 </body>
 </html>
