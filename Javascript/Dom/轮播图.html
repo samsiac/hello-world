@@ -77,24 +77,55 @@
     var aLi = oNav.getElementsByTagName('li');
     var oPrev = document.getElementById('prev');
     var oNext = document.getElementById('next');
+    var oContainer = document.getElementById('container');
     var iNowIndex = 0;
+    var timer;
 
-    for(var i=0; i<aLi.length;i++){
-      aLi[i].index = i;
-      aLi[i].onmouseover = function (){
-          for(var j=0;j<aLi.length;j++){
-             iNowIndex = this.index;
-             changeImg();
-      };
+    for(var i=0; i<aLi.length;i++) {
+        aLi[i].index = i;
+        aLi[i].onmouseover = function() {
+          iNowIndex = this.index;
+          changeImg();
+        }
     }
-
+    oPrev.onclick = oNext.onclick = function(){
+          if(this === oPrev){           //当前页面为前翻时，减
+              iNowIndex--;
+              if(iNowIndex == -1){      //光标页面已经为第一页，数组脚标0
+                  iNowIndex = aLi.length -1;
+              }
+          }else{
+              iNowIndex++;
+              if(iNowIndex == aLi.length){
+                  iNowIndex = 0;
+              }
+          }
+          changeImg();
+    };
+    oPrev.onselectstart = oNext.onselectstart = function (){
+        return false;
+    };
+    oContainer.onmouseover = function(){
+        clearInterval(timer);
+    } ;                          //鼠标滑入停止
+    oContainer.onmouseout = function(){
+        play();
+    };                  //播放
+    play();
     function changeImg(){
    for(var i=0;i<aLi.length;i++){
-       aLi[i].classname = '';
-       aImg[i].classname = '';
-   }
-   aLi[iNowInex].className = 'nav-selected';
+       aLi[i].className = '';
+       aImg[i].className = '';
+   }                                        //选中图片
+   aLi[iNowIndex].className = 'nav-selected';
    aImg[iNowIndex].className = 'selected';
+    }
+
+    //播放
+    function play(){
+        timer = setInterval(function(){         //函数回调
+            oNext.onclick();
+        },1000);                                       //1000毫秒 = 1s
     }
 </script>
 </body>
