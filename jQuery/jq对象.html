@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="wx函数库.js">
+    //1.jq对象
+    //$('#div1').css('background','red');
+    var  $div1 = $('#div1');
+    var oDiv1 = document.getElementById('div1');
+
+    console.log($div1[0].innerHTML);
+    console.log(oDiv1.innerHTML);
+    //jq对象 -> 原生对象 $obj.get(0）
+
+
+    //2.文档就绪函数
+    $(document).ready(function(){
+        console.log($('#div1'));
+    });
+    $(function(){
+        console.log($('#div1'));
+    });
+    window.onload = function(){};
+
+
+    //3.选择器
+    //window全局对象
+    $(function(){
+        console.log($('#div1'));
+    });
+</script>
+</body>
+</html>
