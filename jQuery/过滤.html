@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" placeholder="请输入手机型号" id="search">
+<ul id="list">
+    <li>iphone</li>
+    <li>Galaxy</li>
+    <li>Xiaomi</li>
+    <li>Huawei</li>
+</ul>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $(function(){
+        $('#search').on('keyup',function(){
+            // console.log(this.value);//原生
+            //console.log($(this).val());//jQuery
+            $('#list li').css('background','tranparent');
+            if(this.value != ''){
+                $('#list li:contains(' +this.value+ ')').css('background','#f00');
+            }
+        });
+    });
+
+    //链式操作
+    // $(this).css('background','#f00').attr('aa','bb');
+</script>
+</body>
+</html>
