@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery.min.js"></script>
+    <style>
+        body{
+            font:normal 12px/17px Arial;
+        }
+        div{
+            padding:2px;
+        }
+        input,textarea{
+            width: 12em;
+            /*em可精确到小数点后三位*/
+            border:1px solid #888;
+        }
+        .focus{
+            background: #fcc;
+            border:1px solid #f00;
+        }
+    </style>
+</head>
+<body>
+<form action="" id="regform">
+    <fieldset>
+        <legend>个人基本信息</legend>
+        <div><label for="username">名称：</label>
+            <input type="text" id="username" value="名称"></div>
+        <div><label for="pass">密码：</label>
+            <input type="text" id="pass" value=".."></div>
+        <div><label for="msg">详细信息：</label>
+            <textarea name="" id="msg" cols="20" rows="2">详细信息</textarea></div>
+    </fieldset>
+</form>
+<script>
+    $(":input").focus(function(){
+        $(this).addClass("focus");
+        if( $(this).val() == this.defaultValue){    //defaultValue 属性设置或返回文本框的初始内容。
+            this.value = "";
+        }
+    }).blur(function(){
+        $(this).removeClass("focus").val(this.value == "" ? this.defaultValue : this.value)
+        //value约束性组件,由React管理了它的value：用户输入A -> 触发onChange事件 -> handleChange 中
+        // 设置 state.name = “A” -> 渲染input使他的value变成A
+        //defaultValue非约束性组件的value就是原生的DOM管理的:输入什么显示什么
+    });
+</script>
+</body>
+</html>
