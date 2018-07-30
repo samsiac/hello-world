@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery.min.js"></script>
+    <style>
+    table{
+    border:0;
+    border-collapse: collapse;
+}
+    div{
+     font:normal 12px/17px Arial;
+ }
+     td{
+         font:normal 12px/17px Arial;
+         padding:2px;
+         width:100px;
+     }
+        th{
+            font:bold 12px/17px Arial;
+            text-align: left;
+            padding:4px;
+            border-bottom:1px solid #333;
+            width:100px;
+        }
+        .even{
+            background:#fff38f;
+        }
+        .odd{
+            background:#ffffee;
+        }
+        .selected{
+            background:#ff6500;
+            color:#fff;
+        }
+
+    </style>
+    <script type="text/javascript">
+        /*
+            表格内容过滤练习：功能，在文本框中输入信息，在表格中自动过滤出包含文本框中文字的记录
+        */
+        //文档就绪函数
+        $(function(){
+            //思路：要在文本框中输入信息行，表格立刻过滤中对应的记录，首先应该触发的是文本框的键盘弹起事件，在事件中我们要过滤出想要的记录
+            //      如果过滤？现在有两种思路：
+            //      1.找到包含指定文本的记录行，隐藏其它行
+            //      2.先隐藏所有行，然后找到包含指定文本的记录行，再显示它
+            //注意问题：在某些浏览器中，有这要一个特点，就是刷新网页后，其值会保持不变，这就意味着刷新网页后，文本框中的值未必改变，但是表格中的数据又全出来了
+        })
+    </script>
+</head>
+<body>
+<div>
+    <br>
+    筛选：<input type="text" id="filterName">
+<br>
+</div>
+<table>
+    <thead>
+    <tr>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>暂住地</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr><td>张珊</td><td>女</td><td>浙江宁波</td></tr>
+    <tr><td>李四</td><td>男</td><td>浙江杭州</td></tr>
+    <tr><td>王麻子</td><td>男</td><td>湖南长沙</td></tr>
+    <tr><td>赵二娃</td><td>男</td><td>浙江温州</td></tr>
+    <tr><td>叶儿粑</td><td>女</td><td>浙江杭州</td></tr>
+    <tr><td>王宝器</td><td>男</td><td>浙江杭州</td></tr>
+    <tr><td>李建国</td><td>男</td><td>浙江温州</td></tr>
+    <tr><td>叶英</td><td>女</td><td>浙江杭州</td></tr>
+    <tr><td>陆危楼</td><td>男</td><td>浙江杭州</td></tr>
+    </tbody>
+</table>
+<script>
+    $(function(){
+        $("#filterName").keyup(function(){
+            $("table tbody tr")
+                .hide()     //如果被选的元素已被显示，则隐藏该元素。
+                .filter(":contains('"+( $(this).val() )+"')")   //filter() 方法将匹配元素集合缩减为匹配指定选择器的元素。
+                .show();    //如果被选元素已被隐藏，则显示这些元素：
+        }).keyup();
+
+        //语法:
+       // $(selector).keyup()
+        //定义和用法
+       // 完整的 key press 过程分为两个部分，按键被按下，然后按键被松开并复位。
+
+//当按钮被松开时，发生 keyup 事件。它发生在当前获得焦点的元素上。
+
+//keyup() 方法触发 keyup 事件，或规定当发生 keyup 事件时运行的函数。
+
+//注释：！！！如果在文档元素上进行设置，则无论元素是否获得焦点，该事件都会发生。!!!!
+    })
+</script>
+</body>
+</html>
