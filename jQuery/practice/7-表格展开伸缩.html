@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery.min.js"></script>
+    <style>
+        table{
+            border:0;
+            border-collapse: collapse;/*为表格设置合并边框模型：*/
+        }
+        td{
+            font:normal 12px/17px Arial;
+            padding:2px;
+            width:100px;
+        }
+        th{
+            font:bold 12px/17px Arial;
+            text-align: left;
+            padding:4px;
+            border-bottom:1px solid #333;
+            width:100px;
+        }
+        .parent{
+            background:#fff38f;
+            cursor:pointer;
+        }
+        .odd{
+            background:#ffffee;
+        }
+        .selected{
+            background:#ff6500;
+            color:#fff;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>暂住地</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="parent" id="row_01">
+        <td colspan="3">前端设计组</td>
+    </tr>
+    <tr class="child_row_01">
+        <td>张珊</td>
+        <td>女</td>
+        <td>浙江宁波</td>
+    </tr>
+    <tr class="child_row_01">
+        <td>李四</td>
+        <td>男</td>
+        <td>浙江杭州</td>
+    </tr>
+    <tr class="parent" id="row_02" >
+        <td colspan="3">前台开发组</td>
+    </tr>
+    <tr class="child_row_02">
+        <td>王麻子</td>
+        <td>男</td>
+        <td>湖南长沙</td>
+    </tr>
+    <tr class="child_row_02">
+        <td>赵二娃</td>
+        <td>男</td>
+        <td>浙江温州</td>
+    </tr>
+    <tr class="parent" id="row_03">
+        <td colspan="3">后台开发组</td>
+    </tr>
+    <tr class="child_row_03">
+        <td>叶儿粑</td>
+        <td>女</td>
+        <td>浙江杭州</td>
+    </tr>
+    <tr class="child_row_03">
+        <td>王宝器</td>
+        <td>男</td>
+        <td>浙江杭州</td>
+    </tr>
+    </tbody>
+</table>
+<script>
+    $(function(){
+        $('tr.parent').click(function(){
+            $(this)
+                .toggleClass('selected')    //添加，删除高亮
+                .siblings('.child_'+this.id).toggle();  //隐藏，显示子行
+            //class='parent' id='row_0x'
+        });
+    })
+</script>
+</body>
+</html>
