@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="3rowcolor.css">
+    <script src="../jquery.min.js"></script>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th></th>
+        <!--行-->
+        <th>姓名</th>
+        <!--列名-->
+        <th>性别</th>
+        <th>暂住地</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><input type="checkbox" name="choice" value=""></td>
+        <td>张山</td><!--列-->
+        <td>男</td>
+        <td>浙江宁波</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="choice" value=""></td>
+        <td>李四</td>
+        <td>女</td>
+        <td>浙江杭州</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="choice" value=""></td>
+        <td>王麻子</td>
+        <td>男</td>
+        <td>湖南长沙</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="choice" value=""></td>
+        <td>赵六</td>
+        <td>男</td>
+        <td>浙江温州</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="choice" value=""></td>
+        <td>张二娃</td>
+        <td>男</td>
+        <td>浙江杭州</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="choice" value=""></td>
+        <td>甘豇豆</td>
+        <td>女</td>
+        <td>浙江杭州</td>
+    </tr>
+    </tbody>
+</table>
+<script>
+    $(function(){
+        $("tbody>tr:odd").addClass('odd');
+        $("tbody>tr:even").addClass('even');
+        $("tbody>tr").click(function(){
+            //判断当前是否选中，hasClass() 方法检查被选元素是否包含指定的 class。
+         var hasSelected = $(this).hasClass('selected');
+            //如果选中，则移出selected类；否则加上selected类
+            $(this)[hasSelected ? "removeClass" : "addClass"]('selected')
+            //important,三目运算符中括号
+                .find(':checkbox').attr('checked',true);
+        });
+        $('table:checkbox:checked').parents('tr').addClass('selected');
+    })
+</script>
+</body>
+</html>
