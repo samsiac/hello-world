@@ -67,30 +67,43 @@
             position: sticky;
             top:160px;
         }
-        #content span{
-            font:700 26px Arial;
-        }
+        /*#content span{*/
+            /*font:700 26px Arial;*/
+        /*}*/
         #content img{
             margin-top:20px;
         }
         #content a{
             font-size:16px;
-            height:30px;
+            width: 60px;
+            height:40px;
             margin-left:10px;
             color:#00A862;
+            line-height: 40px;
         }
         #view{
             width: 1063px;
             height: 1230px;
             float: right;
         }
+        #imgs{
+            height: 498px;
+        }
         #view #imgs img{
+            position: absolute;
+            top:0;
             width: 1063px;
             height: 498px;
             /*display:none;*/
+            /*opacity: 0;*/
+
         }
         #imgs .selected{
+            opacity: 1;
+            position:absolute;
+            top:0;
             display:block;
+            z-index: 1;
         }
         #view i{
             font-size:70px;
@@ -100,9 +113,38 @@
             top:230px;
             right:50px;
             cursor: pointer;
+            z-index: 999;
         }
         #view li{
+            float: left;
             opacity: 0;
+        }
+        #fluid{
+            padding-top: 24px;
+            width: 1063px;
+            height: 232px;
+            /*padding:24px 0;*/
+            position: relative;
+            background-color: #f7f7f7;
+        }
+        #fluid img{
+            width: 322px;
+            /*height: 204px;*/
+            float: left;
+            margin-left: 24px;
+            -webkit-transition: 0.3s ;
+            -moz-transition: 0.3s ;
+            -ms-transition: 0.3s ;
+            -o-transition: 0.3s;
+            transition: 0.3s ;
+        }
+        #fluid img:hover{
+            -webkit-transform: translateY(-3px);
+            -moz-transform: translateY(-3px);
+            -ms-transform: translateY(-3px);
+            -o-transform: translateY(-3px);
+            transform: translateY(-3px);
+            box-shadow: #0D0A0A;
         }
     </style>
 </head>
@@ -118,8 +160,8 @@
         <i class="fas fa-bars"></i>
     </div>
     <div id="content">
-        <span>心情惬意，来杯咖啡吧 <i class="fas fa-coffee"></i></span><br>
-        <a href=""><img src="img/icon-account.svg" alt=""></a><a>登录</a>
+        <span style="font: 700 26px Arial;">心情惬意，来杯咖啡吧 <i class="fas fa-coffee"></i></span><br>
+        <a href=""><img src="img/icon-account.svg" alt=""><span>登录</span></a>
         <a href="">注册</a>
     </div>
 </div>
@@ -135,7 +177,13 @@
             <li>2</li>
             <li>3</li>
         </ul>
-    </div>
+
+</div>
+<div id="fluid">
+    <img src="img/starbucks-tmall-0723-cn.jpg" alt="">
+    <img src="img/starbucks-design-studio-web-china.jpg" alt="">
+    <img src="img/homepage-career-cn.jpg" alt="">
+</div>
 </div>
 <script>
     var oImgs = document.getElementById('imgs');
@@ -194,7 +242,7 @@
         function play(){
             timer = setInterval(function(){         //函数回调
                 oNext.onclick();
-            },1000);                                       //1000毫秒 = 1s
+            },2000);                                       //1000毫秒 = 1s
         }
 </script>
 </body>
