@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery.min.js"></script>
+    <style>
+        body{
+            font-size: 16px;
+        }
+        table{
+            border:1px solid #000;
+            border-collapse: collapse;
+            width:400px;
+        }
+        table td,th{
+            border:1px solid #000;
+            width:50%;
+            height:30px;
+        }
+        tbody th{
+            background: #abd;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th colspan="2">鼠标点击表格就可以编辑</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th>学号</th>
+        <th>姓名</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td class="editable">张三</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td class="editable">李四</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td class="editable">王五</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td class="editable">赵六</td>
+    </tr>
+    </tbody>
+</table>
+<script>
+    $(function(){
+        $("tbody tr:even").css("background-color","#edf");     //后代偶数行变色
+        var $editTd = $("td.editable"); //获取编辑的单元格对象
+        $editTd.click(function(){   //为单元格绑定点击事件
+            var $tdObj = $(this);
+            var $inputObj = $("<input type='text'/>");  //创建一个文本框对象
+            $inoutObj.width($(this).width())    //将文本框的长度设置成与td的长度一致
+                .css({"border":"none","background-color":$(this).css("background-color")}); //去掉文本框的border
+            if($(this).children("input[type='text']").size() > 0){
+                //判断如果当前td中包含文本框则什么也不操作
+                return false;
+            }
+            $inputObj.val($(this).text());  //将td中的文本复制到文本框中
+            $(thid).empty()     //清空td中的文本
+            .append($inputObj); //文档操作插入
+            $inputObj.trigger("select") //trigger() 方法触发被选元素的指定事件类型。
+                .keyup(function(event){
+                var keyCode = event.which//获得当前按下的键盘的keyCode值
+                })
+        })
+    })
+</script>
+</body>
+</html>
