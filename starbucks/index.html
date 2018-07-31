@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Starbucks</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration:none;
+        }
+        #header{
+            float: left;
+            width: 455px;
+            height:2000px;
+            border-right:1px solid #ccc;
+            position: -webkit-sticky;
+            position: sticky;
+            top:0;
+            mso-border-shadow: yes;
+        }
+        #head{
+            height: 70px;
+            /*background-color:#ccc;*/
+            /*padding:24px;*/
+            padding-left: 24px;
+            /*padding-top:24px;*/
+            position: -webkit-sticky;
+            position: sticky;
+            top:0;
+        }
+        #head #logo{
+            margin-top: 20px;
+            position: relative;
+            float: left;
+        }
+        #head img{
+            width: 36px;
+        }
+        #head li{
+            margin-top: 24px;
+            width: 70px;
+            margin-left:20px;
+            float: left;
+            font: bold 16px Arial;
+            cursor: pointer;
+        }
+        #head i{
+            float:right;
+            font-size:16px;
+            margin-top: 24px;
+            margin-right:24px;
+            cursor: pointer;
+        }
+        #content{
+            width: 350px;
+            height: 260px;
+            padding-left:84px;
+            padding-top:150px;
+            position: -webkit-sticky;
+            position: sticky;
+            top:160px;
+        }
+        #content span{
+            font:700 26px Arial;
+        }
+        #content img{
+            margin-top:20px;
+        }
+        #content a{
+            font-size:16px;
+            height:30px;
+            margin-left:10px;
+            color:#00A862;
+        }
+        #view{
+            width: 1063px;
+            height: 1230px;
+            float: right;
+        }
+        #view #imgs img{
+            width: 1063px;
+            height: 498px;
+            /*display:none;*/
+        }
+        #imgs .selected{
+            display:block;
+        }
+        #view i{
+            font-size:70px;
+            font-weight:bold;
+            opacity:.5;
+            position: absolute;
+            top:230px;
+            right:50px;
+            cursor: pointer;
+        }
+        #view li{
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="header">
+    <div id="head">
+    <div id="logo"><img src="img/logo.svg" alt=""></div>
+        <ul>
+            <li>门店</li>
+            <li>我的账户</li>
+            <li>菜单</li>
+        </ul>
+        <i class="fas fa-bars"></i>
+    </div>
+    <div id="content">
+        <span>心情惬意，来杯咖啡吧 <i class="fas fa-coffee"></i></span><br>
+        <a href=""><img src="img/icon-account.svg" alt=""></a><a>登录</a>
+        <a href="">注册</a>
+    </div>
+</div>
+<div id="view">
+    <div id="imgs">
+        <img src="img/kv-bev.jpg" alt="" class="selected">
+        <img src="img/kv-mooncake.jpg" alt="">
+        <img src="img/fp-cold-foam.jpg" alt="">
+        <span id="prev"></span>
+        <span id="next"><i class="far fa-chevron-right"></i></span>
+        <ul id="nav">
+            <li class="nav-selected">1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
+</div>
+<script>
+    var oImgs = document.getElementById('imgs');
+    var aImg = oImgs.getElementsByTagName('img');
+    var oNav = document.getElementById('nav');
+    var aLi = oNav.getElementsByTagName('li');
+    var oPrev = document.getElementById('prev');
+    var oNext = document.getElementById('next');
+    var oView = document.getElementById('view');
+    var iNowIndex = 0;
+    var timer;
+
+    for(var i=0;i<aLi.length;i++){
+        aLi[i].index = i;
+        aLi[i].onmouseover = function(){
+            iNowIndex = this.index;
+            changeImg();
+        }
+    }
+
+    oNext.onclick = function(){
+        if(this === oPrev){           //当前页面为前翻时，减
+            iNowIndex--;
+            if(iNowIndex == -1){      //光标页面已经为第一页，数组脚标0
+                iNowIndex = aLi.length -1;
+            }
+        }else{
+            iNowIndex++;
+            if(iNowIndex == aLi.length){
+                iNowIndex = 0;
+            }
+        }
+        changeImg();
+    };
+
+    oNext.onselectstart = function (){
+        return false;
+    };
+
+    oView.onmouseover = function(){
+        clearInterval(timer);
+    } ;                          //鼠标滑入停止
+    oView.onmouseout = function(){
+        play();
+    };
+    play();
+    function changeImg(){
+        for(var i=0;i<aLi.length;i++){
+            aImg[i].className = '';
+        }                                        //选中图片
+        aImg[iNowIndex].className = 'selected';
+    }
+
+
+    //播放
+        function play(){
+            timer = setInterval(function(){         //函数回调
+                oNext.onclick();
+            },1000);                                       //1000毫秒 = 1s
+        }
+</script>
+</body>
+</html>
