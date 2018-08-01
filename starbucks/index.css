@@ -1,0 +1,260 @@
+*{
+    margin:0;
+    padding:0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration:none;
+}
+#header{
+    float: left;
+    width: 455px;
+    height:2000px;
+    border-right:1px solid #ccc;
+    position: -webkit-sticky;
+    position: sticky;
+    top:0;
+    mso-border-shadow: yes;
+}
+#head{
+    height: 70px;
+    /*background-color:#ccc;*/
+    /*padding:24px;*/
+    padding-left: 24px;
+    /*padding-top:24px;*/
+    position: -webkit-sticky;
+    position: sticky;
+    top:0;
+}
+#head #logo{
+    margin-top: 20px;
+    position: relative;
+    float: left;
+}
+#head img{
+    width: 36px;
+}
+#head li{
+    margin-top: 24px;
+    width: 70px;
+    margin-left:20px;
+    float: left;
+    font: bold 16px Arial;
+    cursor: pointer;
+}
+#head i{
+    float:right;
+    font-size:24px;
+    margin-top: 24px;
+    margin-right:24px;
+    cursor: pointer;
+}
+#show ul{
+    padding-right:24px;
+    padding-left:84px;
+    font:bold 18px Arial;
+    position: absolute;
+    top:80px;
+}
+#show img{
+    height: 36px;
+    position: absolute;
+    top:24px;
+    left:24px;
+}
+#show i{
+    position: absolute;
+    top:24px;
+    right:24px;
+    font-size:24px;
+}
+.dis{
+    opacity: 0;
+}
+.active{
+    opacity: 1;
+}
+#slc{
+    opacity:.5;
+}
+#show li{
+    width: 330px;
+    height: 37px;
+    line-height: 37px;
+    padding-top:10px;
+}
+#content{
+    width: 350px;
+    height: 260px;
+    padding-left:84px;
+    padding-top:150px;
+    position: -webkit-sticky;
+    position: sticky;
+    top:160px;
+}
+/*#content span{*/
+/*font:700 26px Arial;*/
+/*}*/
+#content img{
+    margin-top:20px;
+}
+#content a{
+    font-size:16px;
+    width: 60px;
+    height:40px;
+    margin-left:10px;
+    color:#00A862;
+    line-height: 40px;
+}
+#view{
+    width: 1063px;
+    height: 1230px;
+    float: right;
+}
+#imgs{
+    height: 498px;
+}
+#view #imgs img{
+    position: absolute;
+    top:0;
+    width: 1063px;
+    height: 498px;
+    /*display:none;*/
+    /*opacity: 0;*/
+
+}
+#imgs .selected{
+    opacity: 1;
+    position:absolute;
+    top:0;
+    display:block;
+    z-index: 1;
+}
+#imgs i{
+    font-size:70px;
+    font-weight:bold;
+    opacity:.5;
+    position: absolute;
+    top:230px;
+    right:50px;
+    cursor: pointer;
+    z-index: 999;
+}
+#view li{
+    float: left;
+    opacity: 0;
+}
+#fluid{
+    padding-top: 24px;
+    width: 1063px;
+    height: 232px;
+    /*padding:24px 0;*/
+    position: relative;
+    background-color: #f7f7f7;
+}
+#fluid img{
+    width: 322px;
+    /*height: 204px;*/
+    float: left;
+    margin-left: 24px;
+    -webkit-transition: 0.3s ;
+    -moz-transition: 0.3s ;
+    -ms-transition: 0.3s ;
+    -o-transition: 0.3s;
+    transition: 0.3s ;
+}
+#fluid img:hover{
+    -webkit-transform: translateY(-3px);
+    -moz-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    -o-transform: translateY(-3px);
+    transform: translateY(-3px);
+    box-shadow: #0D0A0A;
+}
+#adv{
+    width: 1063px;
+    height: 200px;
+}
+.wrapper{
+    width: 768px;
+    height: 100%;
+    margin:36px 147px;
+}
+#adv span{
+    /*margin-top:20px*/
+    width: 360px;
+    height: 180px;
+    float:left;
+}
+#adv .img{
+    margin-top:50px;
+    height: 72px;
+    float: left;
+    margin-left: 100px;
+}
+#adv a{
+    color:#00A862;
+}
+#tmall-center{
+    height: 416px;
+    background-color: #f7f7f7;
+    /*padding:36px 0;*/
+    text-align: center;
+}
+#tmall-center,#coffe h2{
+    margin-bottom: 18px;
+    padding-top:36px;
+}
+#list{
+    margin-top:48px;
+    width: 744px;
+    height: 270px;
+    display: block;
+}
+#list .li{
+    width: 162px;
+    height: 198px;
+    padding:0 6px;
+    /*border:1px solid #000;*/
+    text-align: center;
+    display:block;
+    float: left;
+    margin-right:12px;
+    background-color:#fff;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+#list .li:hover{
+    -webkit-transform: translateY(-5px);
+    -moz-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    -o-transform: translateY(-5px);
+    transform: translateY(-5px);
+}
+#list img{
+    height: 72px;
+}
+#list p{
+    font-size: 14px;
+}
+#coffe{
+    height: 419px;
+    text-align: center;
+}
+#coffe .preview{
+    width: 290px;
+    height: 245px;
+    border: 1px solid #ccc;
+    float: left;
+    margin: 16px;
+    box-shadow: 5px #000;
+    border-radius: 3px;
+}
+#coffe img{
+    width: 290px;
+}
