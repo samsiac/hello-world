@@ -5,250 +5,43 @@
     <title>Starbucks</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <meta name="viewport">
-    <style>
-        *{
-            margin:0;
-            padding:0;
-        }
-        li{
-            list-style: none;
-        }
-        a{
-            text-decoration:none;
-        }
-        #header{
-            float: left;
-            width: 455px;
-            height:2000px;
-            border-right:1px solid #ccc;
-            position: -webkit-sticky;
-            position: sticky;
-            top:0;
-            mso-border-shadow: yes;
-        }
-        #head{
-            height: 70px;
-            /*background-color:#ccc;*/
-            /*padding:24px;*/
-            padding-left: 24px;
-            /*padding-top:24px;*/
-            position: -webkit-sticky;
-            position: sticky;
-            top:0;
-        }
-        #head #logo{
-            margin-top: 20px;
-            position: relative;
-            float: left;
-        }
-        #head img{
-            width: 36px;
-        }
-        #head li{
-            margin-top: 24px;
-            width: 70px;
-            margin-left:20px;
-            float: left;
-            font: bold 16px Arial;
-            cursor: pointer;
-        }
-        #head i{
-            float:right;
-            font-size:16px;
-            margin-top: 24px;
-            margin-right:24px;
-            cursor: pointer;
-        }
-        #content{
-            width: 350px;
-            height: 260px;
-            padding-left:84px;
-            padding-top:150px;
-            position: -webkit-sticky;
-            position: sticky;
-            top:160px;
-        }
-        /*#content span{*/
-            /*font:700 26px Arial;*/
-        /*}*/
-        #content img{
-            margin-top:20px;
-        }
-        #content a{
-            font-size:16px;
-            width: 60px;
-            height:40px;
-            margin-left:10px;
-            color:#00A862;
-            line-height: 40px;
-        }
-        #view{
-            width: 1063px;
-            height: 1230px;
-            float: right;
-        }
-        #imgs{
-            height: 498px;
-        }
-        #view #imgs img{
-            position: absolute;
-            top:0;
-            width: 1063px;
-            height: 498px;
-            /*display:none;*/
-            /*opacity: 0;*/
-
-        }
-        #imgs .selected{
-            opacity: 1;
-            position:absolute;
-            top:0;
-            display:block;
-            z-index: 1;
-        }
-        #view i{
-            font-size:70px;
-            font-weight:bold;
-            opacity:.5;
-            position: absolute;
-            top:230px;
-            right:50px;
-            cursor: pointer;
-            z-index: 999;
-        }
-        #view li{
-            float: left;
-            opacity: 0;
-        }
-        #fluid{
-            padding-top: 24px;
-            width: 1063px;
-            height: 232px;
-            /*padding:24px 0;*/
-            position: relative;
-            background-color: #f7f7f7;
-        }
-        #fluid img{
-            width: 322px;
-            /*height: 204px;*/
-            float: left;
-            margin-left: 24px;
-            -webkit-transition: 0.3s ;
-            -moz-transition: 0.3s ;
-            -ms-transition: 0.3s ;
-            -o-transition: 0.3s;
-            transition: 0.3s ;
-        }
-        #fluid img:hover{
-            -webkit-transform: translateY(-3px);
-            -moz-transform: translateY(-3px);
-            -ms-transform: translateY(-3px);
-            -o-transform: translateY(-3px);
-            transform: translateY(-3px);
-            box-shadow: #0D0A0A;
-        }
-        #adv{
-            width: 1063px;
-            height: 200px;
-        }
-         .wrapper{
-            width: 768px;
-            height: 100%;
-            margin:36px 147px;
-        }
-        #adv span{
-            /*margin-top:20px*/
-            width: 360px;
-            height: 180px;
-            float:left;
-        }
-        #adv .img{
-            margin-top:50px;
-            height: 72px;
-            float: left;
-            margin-left: 100px;
-        }
-        #adv a{
-            color:#00A862;
-        }
-        #tmall-center{
-            height: 416px;
-            background-color: #f7f7f7;
-            /*padding:36px 0;*/
-            text-align: center;
-        }
-        #tmall-center,#coffe h2{
-            margin-bottom: 18px;
-            padding-top:36px;
-        }
-        #list{
-            margin-top:48px;
-            width: 744px;
-            height: 270px;
-            display: block;
-        }
-        #list .li{
-            width: 162px;
-            height: 198px;
-            padding:0 6px;
-            /*border:1px solid #000;*/
-            text-align: center;
-            display:block;
-            float: left;
-            margin-right:12px;
-            background-color:#fff;
-            -webkit-transition: 0.3s;
-            -moz-transition: 0.3s;
-            -ms-transition: 0.3s;
-            -o-transition: 0.3s;
-            transition: 0.3s;
-        }
-        #list .li:hover{
-            -webkit-transform: translateY(-5px);
-            -moz-transform: translateY(-5px);
-            -ms-transform: translateY(-5px);
-            -o-transform: translateY(-5px);
-            transform: translateY(-5px);
-        }
-        #list img{
-            height: 72px;
-        }
-        #list p{
-            font-size: 14px;
-        }
-        #coffe{
-            height: 419px;
-            text-align: center;
-        }
-        #coffe .preview{
-            width: 290px;
-            height: 245px;
-            border: 1px solid #ccc;
-            float: left;
-            margin: 16px;
-            box-shadow: 5px #000;
-            border-radius: 3px;
-        }
-        #coffe img{
-            width: 290px;
-        }
-    </style>
+    <script src="jquery.js"></script>
+    <script src="btn.js"></script>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
 <div id="header">
-    <div id="head">
+    <div id="head" class="active">
     <div id="logo"><img src="img/logo.svg" alt=""></div>
-        <ul>
+        <ul id="menu">
             <li>门店</li>
             <li>我的账户</li>
             <li>菜单</li>
         </ul>
-        <i class="fas fa-bars"></i>
+        <i class="fas fa-bars" id="slc"></i>
     </div>
-    <div id="content">
+    <div id="content" class="active">
         <span style="font: 700 26px Arial;">心情惬意，来杯咖啡吧 <i class="fas fa-coffee"></i></span><br>
-        <a href=""><img src="img/icon-account.svg" alt=""><span>登录</span></a>
+        <a href=""><i class="far fa-user-circle"></i>登录</a>
         <a href="">注册</a>
+    </div>
+    <div id="show" class="dis">
+        <div>
+            <div><img src="img/logo.svg" alt=""></div>
+            <i class="fas fa-times"></i>
+        </div>
+        <ul>
+            <li>门店</li>
+            <li>星享俱乐部</li>
+            <li>菜单</li><hr/>
+            <li>星巴克移动俱乐部</li>
+            <li>星礼卡</li>
+            <li>星巴克臻选</li>
+            <li>咖啡星讲堂</li>
+            <li>上海烘焙工坊</li>
+            <li>关于星巴克</li>
+            <li>帮助中心</li><hr/>
+        </ul>
     </div>
 </div>
 <div id="view">
@@ -275,7 +68,7 @@
             <span><br>
                 <h2>星享俱乐部</h2><br>
             <p>开启您的星享之旅，星星越多、会员等级越高、好礼越丰富。<a href="" style="color:#C2A661;">了解更多 ›</a></p>
-              <a href=""><img src="img/icon-account.svg" alt="">登录</a>
+              <a href=""><i class="far fa-user-circle"></i></a><a>登录</a>
         <a href="">注册</a>
             </span>
             <img src="img/logo-msr.svg" alt="" class="img">
@@ -297,8 +90,8 @@
         <h2>1912 派克街 | 咖啡星讲堂</h2>
         <p>了解更多星巴克咖啡文化</p>
             <div class="preview"><img src="img/coffeehouse-coffee-cultivation-kv.jpg" alt="">咖啡的起源于培植</div>
-            <div class="preview"><img src="img/coffeehouse-pour-over-kv.jpg" alt="">咖啡调制</div>
-            <div class="preview"><img src="img/coffeehouse-roast-story-kv.jpg" alt="">咖啡烘焙</div>
+            <div class="preview"><img src="img/coffeehouse-pour-over-kv.jpg" alt=""></div>
+            <div class="preview"><img src="img/coffeehouse-roast-story-kv.jpg" alt=""></div>
 
     </div>
 </div>
