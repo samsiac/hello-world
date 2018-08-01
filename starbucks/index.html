@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Starbucks</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <meta name="viewport">
     <style>
         *{
             margin:0;
@@ -146,6 +147,91 @@
             transform: translateY(-3px);
             box-shadow: #0D0A0A;
         }
+        #adv{
+            width: 1063px;
+            height: 200px;
+        }
+         .wrapper{
+            width: 768px;
+            height: 100%;
+            margin:36px 147px;
+        }
+        #adv span{
+            /*margin-top:20px*/
+            width: 360px;
+            height: 180px;
+            float:left;
+        }
+        #adv .img{
+            margin-top:50px;
+            height: 72px;
+            float: left;
+            margin-left: 100px;
+        }
+        #adv a{
+            color:#00A862;
+        }
+        #tmall-center{
+            height: 416px;
+            background-color: #f7f7f7;
+            /*padding:36px 0;*/
+            text-align: center;
+        }
+        #tmall-center,#coffe h2{
+            margin-bottom: 18px;
+            padding-top:36px;
+        }
+        #list{
+            margin-top:48px;
+            width: 744px;
+            height: 270px;
+            display: block;
+        }
+        #list .li{
+            width: 162px;
+            height: 198px;
+            padding:0 6px;
+            /*border:1px solid #000;*/
+            text-align: center;
+            display:block;
+            float: left;
+            margin-right:12px;
+            background-color:#fff;
+            -webkit-transition: 0.3s;
+            -moz-transition: 0.3s;
+            -ms-transition: 0.3s;
+            -o-transition: 0.3s;
+            transition: 0.3s;
+        }
+        #list .li:hover{
+            -webkit-transform: translateY(-5px);
+            -moz-transform: translateY(-5px);
+            -ms-transform: translateY(-5px);
+            -o-transform: translateY(-5px);
+            transform: translateY(-5px);
+        }
+        #list img{
+            height: 72px;
+        }
+        #list p{
+            font-size: 14px;
+        }
+        #coffe{
+            height: 419px;
+            text-align: center;
+        }
+        #coffe .preview{
+            width: 290px;
+            height: 245px;
+            border: 1px solid #ccc;
+            float: left;
+            margin: 16px;
+            box-shadow: 5px #000;
+            border-radius: 3px;
+        }
+        #coffe img{
+            width: 290px;
+        }
     </style>
 </head>
 <body>
@@ -184,6 +270,37 @@
     <img src="img/starbucks-design-studio-web-china.jpg" alt="">
     <img src="img/homepage-career-cn.jpg" alt="">
 </div>
+    <div id="adv">
+        <div class="wrapper">
+            <span><br>
+                <h2>星享俱乐部</h2><br>
+            <p>开启您的星享之旅，星星越多、会员等级越高、好礼越丰富。<a href="" style="color:#C2A661;">了解更多 ›</a></p>
+              <a href=""><img src="img/icon-account.svg" alt="">登录</a>
+        <a href="">注册</a>
+            </span>
+            <img src="img/logo-msr.svg" alt="" class="img">
+        </div>
+    </div>
+    <div id="tmall-center">
+        <div class="wrapper">
+            <h2>星巴克精选</h2>
+            <p>在星巴克天猫旗舰店发现更多咖啡心意</p>
+            <div id="list">
+                <div class="li"><img src="img/tmall-card-01.png" alt=""><h3>星享卡</h3><p>开始您的星巴克和专属之旅</p><p>了解更多</p></div>
+                <div class="li"><img src="img/tmall-card-02.png" alt=""><h3>星礼卡</h3><p>用一份心礼让心意相随</p><p>了解更多</p></div>
+                <div class="li"><img src="img/tmall-eticket.png" alt=""><h3>电子产品券</h3><p>心意从这一杯开始</p><p>了解更多</p></div>
+                <div class="li"><img src="img/tmall-reserve.png" alt=""><h3>咖啡生活</h3><p>星巴克用心制作</p><p>了解更多</p></div>
+            </div>
+        </div>
+    </div>
+    <div id="coffe">
+        <h2>1912 派克街 | 咖啡星讲堂</h2>
+        <p>了解更多星巴克咖啡文化</p>
+            <div class="preview"><img src="img/coffeehouse-coffee-cultivation-kv.jpg" alt="">咖啡的起源于培植</div>
+            <div class="preview"><img src="img/coffeehouse-pour-over-kv.jpg" alt="">咖啡调制</div>
+            <div class="preview"><img src="img/coffeehouse-roast-story-kv.jpg" alt="">咖啡烘焙</div>
+
+    </div>
 </div>
 <script>
     var oImgs = document.getElementById('imgs');
