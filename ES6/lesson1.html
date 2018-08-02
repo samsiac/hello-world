@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul id="nav">
+        <li>001</li>
+        <li>002</li>
+        <li>003</li>
+        <li>004</li>
+    </ul>
+    <script>
+    var a = 5;
+    console.log(a);
+    // var 没有块级作用域，影响输出 
+let b = 5;  //let 不存在变量提升；只作用于作用域内
+console.log(b);
+
+
+// var aLi = document.querySelectorAll('#nav li');
+// for(var i=0;i<aLi.length;i++){
+//     aLi[i].index = i;
+//     aLi[i].onclick = function(){
+//         console.log(this.index);
+//     }
+// }
+//闭包：
+//外部函数内定义一个内部函数，内部函数引用外部函数的变量，这样外部函数的变量就不会被释放
+var aLi = document.querySelectorAll('#nav li');
+for(var i=0;i<aLi.length;i++){
+ (function(idx){
+     aLi[idx].onclick = function(){
+         console.log(idx);
+     };
+ })(i);
+}
+
+//GC
+function fn1(){
+    return function fn2(){
+        var a = 5;
+        return a;
+    }
+}
+console.log(fn1()());
+
+
+//const
+const obj = {
+    name:'zhangsan',
+    age:18
+};
+
+
+    </script>
+</body>
+</html>
