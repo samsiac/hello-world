@@ -56,6 +56,47 @@ const obj = {
     age:18
 };
 
+let obj = {
+    name = 'lisi',
+    age = 20
+};
+console.log(name, age);
+
+//解构
+let {age, name} = { //顺序可不对应，但名字应对应
+    name = 'lisi',
+    age = 20
+};
+console.log(name, age);
+
+
+//若不想名字对应则起小名
+let {age:age1, name:name1} = { 
+    name = 'lisi',
+    age = 20
+};
+console.log(name1, age1);   //此时输出大名有误，对象不区分顺序，数组区分
+
+let str = 'Peking';
+for(let i=0;i<str.length;i++){
+    console.log(i);
+}   //字符串与数组结构功能相似
+
+let [a,b,c,d,e,f,g] = 'Peking';
+for(let i=0;i<str.length;i++){
+    console.log(str[i]);
+} 
+console.log(a,b,c,d,e,f,g);
+
+
+
+function foo(){
+    console.log(123);
+}
+let [a=foo()] = [i];
+
+//函数参数解构
+//json:javascript object notation/JS对象简谱
 
     </script>
 </body>
