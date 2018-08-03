@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//       $.get('http://bird.ioliu.cn/v1?url=http://api.bouban.com/v2/movie/in_teachers',(res)=>{       //箭头函数返回值
+// console.log(res);
+// },'json');
+        let movieUrl = 'https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/in_theaters';
+        //jq的Ajax
+        $.get(movieUrl,res=>{
+            console.log(res.subjects)
+                let $list = $('#list');
+                for(let movie of res.subjects) {
+                    let $li = $(`<li>${movie.title}</li>`);
+                        $list.append($li);
+                        //append() 方法在被选元素的结尾（仍然在内部）插入指定内容。
+                }
+        
+        },'json' );
+
+        //Ajax原理
+
+        //1.创建XMLHttpRequest对象
+        var xmlhttp;
+        if(window.XMLHttpRequest){  //code for IE7+.firefox,chrome,opera,safari
+            xmlhttp = new XMLHttpRequest();
+        }else {//code for IE6,IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        //2.发送请求
+        xmlhttp.open("GET",movieUrl,true);
+        xmlhttp.send();
+
+        //服务端响应
+        xmlhttp.onreadystatechange = function(){
+            if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+                // console.log(xmlhttp.responseText);
+                let obj = JSON.parse(xmlhttp.responseText);
+                console.log(obj);
+            }
+        }
+        
+        
+        </script>
+</body>
+</html>
