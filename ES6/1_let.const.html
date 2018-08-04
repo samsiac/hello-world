@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="nav">
+        <li>001</li>
+        <li>002</li>
+        <li>003</li>
+        <li>004</li>
+    </ul>
+    <script>
+    //var -> variable
+    /* a = 5;
+    console.log(a);*/
+
+
+
+    // var a = 5;
+    // function foo(){
+    //     var a = 6;      //局部变量
+    //     console.log('1==' + a);
+    // }
+    // foo();
+    // console.log('2==' + a);
+    
+    // console.log(a);//变量提升
+    // var a = 5;  //输出undefined
+
+// var a;
+// console.log(a);
+// a = 5;      //输出undefined
+
+
+// var i = 8;
+// for(var i=0;i<5;i++){
+//     console.log(i);//输出0 1 2 3 4 
+// }
+// console.log(i);//输出5
+//var 没有块级作用域
+
+
+// if(false){
+//     var a = 5;
+// }
+// console.log(a);//输出undefined
+
+  
+// console.log(a);
+//   let a = 5;    //error: a is not defined
+
+// var a = 5;
+// var a = 6;
+// console.log(a);//输出6
+
+// let a = 5;
+// let a = 6;
+// console.log(a);//error:'a' has already been declared
+
+
+// for(let i=0;i<5;i++){
+//     console.log(i); //输出0 ·1 2 3 4
+// }
+// console.log(i);//无法输出此行
+
+//  function foo() {
+//             console.log(a);
+//             let a = 5;
+//         }
+//         foo(); //无法输出？？？
+
+
+// var aLi = document.querySelectorAll('#nav li');
+// for(var i=0;i<aLi.length;i++){
+//     aLi[i].index = i;
+//     aLi[i].onclick = function(){
+//         console.log(this.index);
+//     };
+// }//点击各输出0 1 2 3
+
+
+
+//闭包  内存泄漏
+// var aLi = document.querySelectorAll('#nav li');
+// for(var i=0;i<aLi.length;i++){
+//     (function(idx){
+//         aLi[idx].onclick = function(){
+//             console.log(idx);
+//         };
+//     })(i);//点击各输出0 1 2 3
+// }
+
+
+//GC
+// function fn1(){
+//     return function fn2(){
+//         var a = 5;
+//         return a;
+//     }
+// }
+// console.log(fn1()());//输出5
+
+// var aLi = document.querySelectorAll('#nav li');
+// for(let i=0;i<aLi.length;i++){
+//     aLi[i].onclick = function(){
+//         console.log(i);//点击输出脚标
+//     }
+// }
+
+
+// const a = 5;
+//          a = 6; //无输出
+
+// const obj = {
+//     name:'zs',
+//     age:18
+// };
+// Object.freeze(obj);
+// obj.age = 20;
+// console.log(obj);
+
+
+// const obj = {
+//     name:'zs',
+//     age:18
+// };
+// obj = {
+//     age:20
+// };
+// new Object();
+
+
+    
+    
+    </script>
+</body>
+</html>
