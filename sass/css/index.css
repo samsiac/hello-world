@@ -1,0 +1,17 @@
+#div1 {
+  width: 200px;
+  height: 200px;
+  background: #f00;
+}
+#div1 .aa {
+  font-size: 12px;
+}
+#div1 .aa .bb {
+  background: #f00;
+}
+
+#div2 {
+  color: #f00;
+}
+
+/*# sourceMappingURL=index.css.map */

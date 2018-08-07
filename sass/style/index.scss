@@ -1,0 +1,17 @@
+$color:#f00;
+$w:200px;
+#div1{
+    width: $w;
+    height: $w;
+    background:$color;
+    .aa{
+        font-size: 12px;
+        .bb{
+            background: #f00;
+        }
+    }
+}
+
+#div2{
+    color:$color;
+}
