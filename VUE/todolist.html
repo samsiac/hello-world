@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+    .wrapper{
+        margin:200px 500px;
+    }
+    #div1{
+        width: 500px;
+        height: 500px;
+    }
+    h1{
+        text-align:center;
+    }
+    #list li{
+        padding-left:15px;
+        list-style: none;
+        width: 475px;
+        height: 50px;
+        line-height:50px;
+        background-color:#ccc;
+        margin-bottom:20px;
+    }
+    #list .name,.num{
+        /* position: relative; */
+        float: left;
+    }
+    #list .num{
+        padding-right:10px;
+        float: right;
+    }
+#list .active{
+    background: #f00;
+}
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div id="div1">
+ <h1>todolist</h1><hr>
+名称：<input type="text" placeholder="请输入产品名称">
+价格：<input type="text" placeholder="0">
+<button @click.once="add($event)">增加</button>
+<input type="text" placeholder="请输入关键字">
+<button>查询</button>
+<ul id="list">
+    <li class="active">
+        <div class="name">
+         <input type="checkbox" checked="checked">衣服   
+        </div>
+<div class="num">123</div>
+    </li>
+    <li>
+        <div class="name">
+             <input type="checkbox">裤子   
+       </div>
+    <div class="num">
+        564
+    </div>
+    </li>
+    <li>
+        <div class="name">
+         <input type="checkbox">鞋   
+        </div>
+    <div class="num">66</div>
+    </li>
+     <li>
+     <div class="name">
+     <input type="checkbox">iphoneX   
+    </div>
+    <div class="num">8888</div>
+     </li>
+     <li>
+     <div class="name">
+     <input type="checkbox">电脑   
+      </div>
+      <div class="num">986</div>
+      </li>
+   
+</ul>
+<button>删除选中</button>总价<span>66</span>     
+    </div>
+
+ </div>
+    
+<script src="jquery.js"></script> 
+<script src="vue.js"></script>
+<script>
+$(function(){
+    $('ul>li').click(function(){
+       let hasSelected = $(this).hasClass('active');
+       $(this)[hasSelected ? "removeClass" : "addClass"]('active')
+       .find(':checkbox').attr('checked',true);
+    });
+    
+});
+
+let vm = new Vue({
+    el: '#app',
+    data:{
+        count: 0,
+        product: [
+            {
+            name:'衣服',
+            price: 123
+         },
+         {
+            name:'裤子',
+            price: 564  
+         },
+         {
+            name:'鞋',
+            price: 66
+         },
+         {
+            name:'iphoneX',
+            price: 8888
+         },
+         {
+            name:'电脑',
+            price: 986
+         }
+        
+        ]
+    },
+    methods: {
+        add(n,e){
+            this.count += n;
+            console.log(e);
+        }
+    }
+});
+// vm.$data.msg
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        {{msg}}
+        <form action="">
+            用户名：<input type="text" v-model="username">
+            <p>名字是:{{username}}</p>
+            <p>性别是：
+                <input type="radio" name="s" v-model="sex" value="">男
+                <input type="radio" name="s" v-model="sex" value="">女
+                {{sex}}</p>
+            <p>爱好是：{{hobby}}</p>
+        </form>
+    </div>
+<script src="vue.js"></script>
+<script>
+let vm = new Vue({
+    el: '#app',
+    data: {
+        msg: 'Hello World',
+       username: 'zs',
+       sex: '',
+       hobby: []
+    }
+});
+
+// vm.$data.msg
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+</body>
+</html>
