@@ -8,20 +8,66 @@
 </head>
 <body>
    <script>
-    let str = '123abc'; 
-    console.log(str.indexOf('ab'));
-    console.log(str.includes('ab'));//返回bool型
-    let n = 'ab';
+//     let str = '123abc'; 
+//     console.log(str.indexOf('ab'));
+//     console.log(str.includes('ab'));//返回bool型
+//     let n = 'ab';
   
-//  定义正则表达式方法一   
-let reg = /ab/;//不能是变量
-console.log(reg.test(str));//返回bool型?
-console.log(reg.exec(str));//返回数组
+// //  定义正则表达式方法一   
+// let reg = /ab/;//不能是变量
+// console.log(reg.test(str));//返回bool型?
+// console.log(reg.exec(str));//返回数组
 
 
-// 定义方法二
-let reg2 = new RegExp('n');//可以变量
-console.log(reg2.test(str));
+// // 定义方法二
+// let reg2 = new RegExp('n');//可以变量
+// console.log(reg2.test(str));
+
+// let reg = /test/;
+// let str = 'testString';
+// let result = reg.exec(str);
+// alert(result);//输出结果为test
+
+// //函数匹配正则练习/此种简单匹配用indexof也可完成
+function execReg(reg,str){
+    let result = reg.exec(str);
+    console.log(result);
+}
+// let reg = /test/;
+// let str = 'testString';
+// execReg(reg,str);
+
+// reg = /c{1}/;
+// str = 'cainiao';
+// execReg(reg,str);//返回结果c
+
+// reg = /c{2}/;
+// str = 'cainiao';
+// execReg(reg,str);//返回结果null
+
+// reg = /c{2}/;
+// str = 'ccVC果冻爽';
+// execReg(reg,str);//返回结果cc
+
+reg = /c{3,4}/;//连续三个或四个c
+str = 'ccVC果冻爽';
+execReg(reg,str);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
