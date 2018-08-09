@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    h1{
+        text-align: center;
+    }
+   form{
+     
+        margin:10px 260px;
+    }
+    body{
+        font-size:20px;   
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+    <div id="app">
+        <h1>{{head}}</h1><hr>
+        <form class="form-inline">
+       名称：<input type="text" placeholder="请输入产品名称">
+    价格：<input type="text" placeholder="0">
+    <button class="btn" @click="add">增加</button>
+    <input type="text" placeholder="请输入搜索关键字">
+    <button class="btn">查询</button>  
+      
+        </form>   
+<table class="table table-bordered table-hover">
+<thead>
+    <td>选择</td>
+    <td>商品名称</td>
+    <td>商品价格</td>
+    <td>删除选中</td>
+</thead>
+<tbody>
+    <tr v-for="(product,index) in productList">
+        <td><input type="checkbox"></td>
+        <td>{{product.productName}}</td>
+        <td>{{product.productPrice}}</td>
+        <td><button type="button" class="btn btn-warning active">X</button></td>
+    </tr>
+</tbody>
+<tfoot>
+    <td colspan="2"><button class="btn btn-danger">删除选中</button></td>
+    <td colspan="2">总价：{{count}}</td>
+</tfoot>
+</table>
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+    new Vue({
+        el: '#app',
+        data: { 
+            count: 0, 
+        head:'todolist',
+            productList:[{
+                productName:'衣服',
+                productPrice:123
+            },
+            {
+                productName:'裤子',
+                productPrice:564
+            },
+            {
+                productName:'鞋',
+                productPrice:66
+            },
+            {
+                productName:'iphoneX',
+                productPrice:8888
+            },
+            {
+                productName:'电脑',
+                productPrice:986
+            }
+            ]
+        },
+        methods:{       //定义函数
+            select(){
+                console.log(this);
+            },
+            add(){
+                console.log(this.count++);
+            }
+        }
+    })
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </script>
+</body>
+</html>
